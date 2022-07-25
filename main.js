@@ -42,9 +42,13 @@ function startTheGrid(){
     let dimension;
     button.addEventListener('click', ()=>{
         dimension = prompt('Enter the size of the squares on the grid');
-        const container = document.querySelector('#container');
-        container.innerHTML = ''
-        colorAndCreateTheGrid(dimension, 'black');
+        if(dimension > 100){
+            return alert('Dimension can\'t be larger than 100!')
+        }else{
+            const container = document.querySelector('#container');
+            container.innerHTML = ''
+            colorAndCreateTheGrid(dimension, 'black');
+        }
     });
 }
 
