@@ -10,8 +10,6 @@ function createGrid(dimension){
         while(counter2<dimension){
             let square = document.createElement('div');
             square.setAttribute('class', 'square');
-            square.style.borderLeft = '1px solid black';
-            square.style.borderRight = '1px solid black';
             square.style.flexGrow = '1';
             row.appendChild(square);
             counter2++;
@@ -19,7 +17,6 @@ function createGrid(dimension){
 
         row.setAttribute('class', 'row');
         row.style.height = '37.5px';
-        row.style.border = '1px solid black';
         container.appendChild(row);
         counter++;
     }
@@ -43,8 +40,8 @@ function startTheGrid(){
     let dimension;
     buttonChangeDimension.addEventListener('click', ()=>{
         dimension = prompt('Enter the size of the squares on the grid');
-        if(dimension > 100){
-            return alert('Dimension can\'t be larger than 100!')
+        if(dimension > 100 || dimension < 16){
+            return alert('Dimension can\'t be more than 100 or less than 16!')
         }else{
             container.innerHTML = ''
             colorAndCreateTheGrid(dimension, 'black');
