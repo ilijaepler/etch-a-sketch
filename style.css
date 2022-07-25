@@ -17,11 +17,18 @@ h1{
 }
 
 #buttonHolder{
+    width: 700px;
+    margin: 0px auto;
     display: flex;
     justify-content: center;
 }
 
+button{
+    margin-left: 20px;
+}
+
 #changeDimensionOfTheGrid{
+    flex: 1;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 24px;
     background-color: white;
@@ -30,6 +37,19 @@ h1{
 }
 
 #changeDimensionOfTheGrid:hover{
+    border: 5px solid black;
+}
+
+#clearTheGrid{
+    flex: 1;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 24px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 50px;
+}
+
+#clearTheGrid:hover{
     border: 5px solid black;
 }
 

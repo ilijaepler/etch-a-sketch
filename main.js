@@ -38,18 +38,24 @@ function colorAndCreateTheGrid(gridDimension, color){
 
 function startTheGrid(){
     colorAndCreateTheGrid(16, 'black');
-    const button = document.querySelector('#changeDimensionOfTheGrid');
+    const buttonChangeDimension = document.querySelector('#changeDimensionOfTheGrid');
+    const container = document.querySelector('#container');
     let dimension;
-    button.addEventListener('click', ()=>{
+    buttonChangeDimension.addEventListener('click', ()=>{
         dimension = prompt('Enter the size of the squares on the grid');
         if(dimension > 100){
             return alert('Dimension can\'t be larger than 100!')
         }else{
-            const container = document.querySelector('#container');
             container.innerHTML = ''
             colorAndCreateTheGrid(dimension, 'black');
         }
     });
+
+    const buttonClearTheGrid = document.querySelector('#clearTheGrid');
+    buttonClearTheGrid.addEventListener('click', ()=>{
+        container.innerHTML = ''
+        colorAndCreateTheGrid(16, 'black');
+    })
 }
 
 startTheGrid();
